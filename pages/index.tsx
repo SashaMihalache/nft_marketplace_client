@@ -1,10 +1,19 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { Banner } from '../components';
 
 export default function Home() {
   return (
-    <div className="text-3xl font-bold underline">
-      <h1>Hello world</h1>
+    <div className="flex justify-center sm:px-4 p-12">
+      <div className="w-full minmd:w-4/5">
+        <div className="pt-65">
+          <Banner
+            parentStyles="justify-start mb-6 h-72 sm:h-60 p-12 xs:p-4 xs:h-44 rounded-3xl"
+            childStyles="md:text-4xl sm:text-2xl xs:text-xl text-left"
+            name="Discover, collect and sell extraordinary NFTs"
+          />
+        </div>
+      </div>
     </div>
   );
 }
