@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRef, useState, useEffect } from 'react';
-import { Banner, CreatorCard } from '../components';
+import { Banner, CreatorCard, NFTCard } from '../components';
 import images from '../assets';
 import { makeId } from '../utils/makeId';
 import { useTheme } from 'next-themes';
@@ -109,6 +109,30 @@ export default function Home() {
                 )}
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <div className="flexBetween mx-4 xs:mx-0 minlg:mx-8 sm:flex-col sm:items-start">
+            <h1 className="before:first:font-poppins dark:text-white text-nft-black-1 text-2xl minlg:text-4xl font-semibold sm:mb-4 flex-1">
+              Hot Bids
+            </h1>
+            <div>Search Bar</div>
+          </div>
+          <div className="mt-3 w-full flex flex-wrap justify-start md:justify-center">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
+              <NFTCard
+                key={`nft-${i}`}
+                nft={{
+                  i,
+                  name: `Nifty NFT ${i}`,
+                  price: (10 - i * 0.534).toFixed(2),
+                  seller: `0xxxx`,
+                  owner: `0xxxx`,
+                  description: `Cool NFT on sale`,
+                }}
+              />
+            ))}
           </div>
         </div>
       </div>
